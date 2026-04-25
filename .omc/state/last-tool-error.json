@@ -1,0 +1,7 @@
+{
+  "tool_name": "Read",
+  "tool_input_preview": "{\"file_path\":\"D:\\\\workspace\\\\docs\\\\registry\\\\README.md\"}",
+  "error": "File does not exist. Note: your current working directory is D:\\workspace.",
+  "timestamp": "2026-04-19T13:25:43.424Z",
+  "retry_count": 1
+}

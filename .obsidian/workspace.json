@@ -1,0 +1,222 @@
+{
+  "main": {
+    "id": "2a456909f758385f",
+    "type": "split",
+    "children": [
+      {
+        "id": "6f8079e243df4e59",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "20f85dd97fbdfda5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/INDEX.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "INDEX"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "df6e10fef1733f3c",
+    "type": "split",
+    "children": [
+      {
+        "id": "c2ef8eb51e9aa8e8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b64a85472860197",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "c7110fad0c83dc00",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "4f45d6c19e473b7f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "22bc45e7bb49567d",
+    "type": "split",
+    "children": [
+      {
+        "id": "7480f134ecfe3c60",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c46e5cb80199440d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "백링크"
+            }
+          },
+          {
+            "id": "b60444250d0c1b82",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "나가는 링크"
+            }
+          },
+          {
+            "id": "d301ce94be5f40db",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          },
+          {
+            "id": "3d504de0083e5d3d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "모든 속성"
+            }
+          },
+          {
+            "id": "df8193149224e5b0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "개요"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false
+    }
+  },
+  "active": "20f85dd97fbdfda5",
+  "lastOpenFiles": [
+    "raw/graphics/index.md",
+    "wiki/lint_2026-04-19.md",
+    "llm_wiki_intro.md",
+    "CLAUDE.md.tmp.2460.1776605748821",
+    "wiki/index.md.tmp.2460.1776605352834",
+    "CLAUDE.md.tmp.2460.1776604943310",
+    "CLAUDE.md.tmp.2460.1776604936250",
+    "CLAUDE.md.tmp.2460.1776604925944",
+    "CLAUDE.md.tmp.2460.1776604914118",
+    "CLAUDE.md.tmp.2460.1776604906417",
+    "CLAUDE.md.tmp.2460.1776604903297",
+    "CLAUDE.md.tmp.2460.1776604899589",
+    "CLAUDE.md.tmp.2460.1776604895640",
+    "harness_engineering_intro.md",
+    "CLAUDE 1.md",
+    "CLAUDE.md",
+    "wiki/lint_2026-04-19b.md",
+    "docs/engine-reference/README.md",
+    "docs/examples/README.md",
+    "wiki/papers/volumetric_and_shadow.md",
+    "wiki/papers/pbr_and_shading.md",
+    "wiki/papers/lod_and_geometry.md",
+    "wiki/papers/global_illumination.md",
+    "wiki/papers/generative_3d.md",
+    "wiki/llm_wiki_design.md",
+    "docs/examples/session-scope-crisis-decision.md",
+    "docs/examples/session-story-lifecycle.md",
+    "docs/examples/session-ux-pipeline.md",
+    "docs/engine-reference/unreal/plugins/pcg.md",
+    "docs/engine-reference/unreal/plugins/gameplay-camera-system.md",
+    "docs/engine-reference/unreal/plugins/gameplay-ability-system.md",
+    "docs/engine-reference/unreal/plugins/common-ui.md",
+    "docs/examples/session-adopt-brownfield.md",
+    "docs/examples/reverse-document-workflow-example.md",
+    "docs/WORKFLOW-GUIDE.md",
+    "docs/COLLABORATIVE-DESIGN-PRINCIPLE.md"
+  ]
+}

@@ -1,0 +1,3 @@
+{"t":0,"agent":"system","event":"keyword_detected","keyword":"wiki"}
+{"t":0,"agent":"a4d6bfd","agent_type":"architect","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a4d6bfd","agent_type":"architect","event":"agent_stop","success":true,"duration_ms":108225}

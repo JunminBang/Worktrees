@@ -1,0 +1,204 @@
+{
+  "main": {
+    "id": "77432892c6c19c17",
+    "type": "split",
+    "children": [
+      {
+        "id": "bc7d6ba407150b6e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "be2ed6b10bb3a867",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "bugs/BUG-001.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "BUG-001"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "cdba64177e1b3843",
+    "type": "split",
+    "children": [
+      {
+        "id": "4f29d81f6fd004e4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "04a24ee1ef245307",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "f66739d957c82284",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "2d33420fef380a8c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ed58138955019c9f",
+    "type": "split",
+    "children": [
+      {
+        "id": "e7c91a92dcdc903c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b69c4920ce18222a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "bugs/BUG-001.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "BUG-001 의 백링크"
+            }
+          },
+          {
+            "id": "362e7f412d86d972",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "bugs/BUG-001.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "BUG-001 의 나가는 링크"
+            }
+          },
+          {
+            "id": "6fad1e947ac123f8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          },
+          {
+            "id": "bf389a9b2ada8ac6",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "모든 속성"
+            }
+          },
+          {
+            "id": "347f38f0ef2b3c15",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "bugs/BUG-001.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "BUG-001 의 개요"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false
+    }
+  },
+  "active": "be2ed6b10bb3a867",
+  "lastOpenFiles": [
+    "systems/static_mesh.md",
+    "log.md.tmp.24012.1776518718753",
+    "index.md.tmp.24012.1776518712062",
+    "papers/rendering_pipeline_advances.md",
+    "papers/rendering_pipeline_advances.md.tmp.24012.1776518696184",
+    "papers/gaussian_splatting.md",
+    "papers/gaussian_splatting.md.tmp.24012.1776518663658",
+    "papers/neural_rendering.md",
+    "papers/neural_rendering.md.tmp.24012.1776518625740",
+    "systems/rendering.md",
+    "papers/hybrid_rendering.md",
+    "papers/hybrid_rendering.md.tmp.24012.1776518587542",
+    "papers",
+    "log.md",
+    "index.md"
+  ]
+}
