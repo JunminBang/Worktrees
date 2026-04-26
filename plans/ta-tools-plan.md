@@ -9,8 +9,34 @@
 ## 진행 상태 기준
 
 - `[ ]` 미착수
-- `[~]` 진행 중
+- `[기]` 기획서 작성 완료 (어드바이저 검수 전)
+- `[검]` 기획서 검수 완료 (구현 대기)
+- `[~]` 구현 중
 - `[x]` 완료
+
+---
+
+## 기획서 작성 프로세스
+
+모든 도구는 구현 전 아래 순서를 반드시 따른다.
+
+```
+① 기획서 초안 작성 → plans/specs/<도구명>.md
+        ↓
+② 어드바이저(oh-my-claudecode:architect) 검수 요청
+   - 기술적 실현 가능성
+   - 누락된 엣지 케이스
+   - 제안 로직의 오탐 위험
+   - 구현 순서 리스크
+        ↓
+③ 검수 피드백 반영 → 기획서 업데이트
+        ↓
+④ 상태를 [기] → [검] 으로 변경
+        ↓
+⑤ 구현 착수
+```
+
+> 기획서 없이 구현 착수 금지. 어드바이저 검수 없이 `[검]` 상태 부여 금지.
 
 ---
 
@@ -18,7 +44,7 @@
 
 | 상태 | 도구명 | 설명 |
 |---|---|---|
-| `[ ]` | **Asset Naming Validator** | 에셋명 컨벤션(`SM_`, `T_`, `M_` 등) 위반 자동 탐지 + 일괄 리네임 |
+| `[검]` | **Asset Naming Validator** | 에셋명 컨벤션(`SM_`, `T_`, `M_` 등) 위반 자동 탐지 + 일괄 리네임 |
 | `[ ]` | **LOD Auto Generator** | StaticMesh 임포트 시 LOD 자동 생성 및 기준치 적용 |
 | `[ ]` | **Texture Audit Tool** | 해상도 pow2 미준수, 과다 메모리 텍스처 탐지, 압축 포맷 일괄 변경 |
 | `[ ]` | **Orphan Asset Finder** | 참조 없는 에셋 탐지 → 삭제 목록 생성 |
@@ -30,7 +56,7 @@
 
 | 상태 | 도구명 | 설명 |
 |---|---|---|
-| `[ ]` | **Level Health Checker** | 겹친 액터, 음수 Z, 극단 스케일, PlayerStart 중복 자동 탐지 |
+| `[검]` | **Level Health Checker** | 겹친 액터, 음수 Z, 극단 스케일, PlayerStart 중복 자동 탐지 |
 | `[ ]` | **Light Complexity Reporter** | Dynamic Light 수, 영향 반경 중복 구간 시각화 |
 | `[ ]` | **Actor Tag Auditor** | GameplayTag 미부여 액터 목록, 태그 스키마 위반 탐지 |
 | `[ ]` | **Streaming Level Validator** | World Partition / Level Streaming 설정 일관성 검사 |
@@ -72,8 +98,8 @@
 | 상태 | 도구명 | 설명 |
 |---|---|---|
 | `[ ]` | **Cook Report Diff** | 두 빌드 간 패키지 크기 변동 자동 비교 + 원인 에셋 지목 |
-| `[ ]` | **Blueprint Compile Watchdog** | Commandlet로 전체 BP 컴파일 → 에러/경고 CSV 출력 |
-| `[ ]` | **Wiki Auto-Ingest Hook** | 빌드/디버그 로그 자동으로 `raw/`에 저장 후 wiki ingest 트리거 |
+| `[검]` | **Blueprint Compile Watchdog** | Commandlet로 전체 BP 컴파일 → 에러/경고 CSV 출력 |
+| `[~]` | **Wiki Auto-Ingest Hook** | 빌드/디버그 로그 자동으로 `raw/`에 저장 후 wiki ingest 트리거 |
 
 ---
 
@@ -81,10 +107,10 @@
 
 | 상태 | 도구명 | 설명 |
 |---|---|---|
-| `[ ]` | **Draw Call Budget Tracker** | 지정 레벨 드로우콜 수 측정 + 머지 후보 메시 제안 |
+| `[검]` | **Draw Call Budget Tracker** | 지정 레벨 드로우콜 수 측정 + 머지 후보 메시 제안 |
 | `[ ]` | **Memory Budget Snapshot** | 텍스처 / 메시 / 오디오 카테고리별 메모리 점유 스냅샷 비교 |
 | `[ ]` | **Tick Dependency Visualizer** | TickGroup 별 컴포넌트 체인 시각화 — 불필요한 Tick 탐지 |
-| `[ ]` | **Collision Complexity Auditor** | Per-Poly 콜리전 사용 메시 탐지 → Simple 대체 후보 목록 |
+| `[검]` | **Collision Complexity Auditor** | Per-Poly 콜리전 사용 메시 탐지 → Simple 대체 후보 목록 |
 
 ---
 
@@ -92,7 +118,7 @@
 
 | 상태 | 도구명 | 설명 |
 |---|---|---|
-| `[ ]` | **Foliage Density Normalizer** | 레벨 구역별 폴리지 밀도 편차 탐지 + 균등화 제안 |
+| `[검]` | **Foliage Density Normalizer** | 레벨 구역별 폴리지 밀도 편차 탐지 + 균등화 제안 |
 | `[ ]` | **PCG Graph Validator** | PCG 그래프 내 누락 입력핀, 무한 루프 위험 노드 정적 분석 |
 | `[ ]` | **Landscape Layer Weight Checker** | 레이어 가중치 합산이 1.0 미만/초과인 구간 히트맵 출력 |
 
@@ -112,7 +138,7 @@
 | 상태 | 도구명 | 설명 |
 |---|---|---|
 | `[ ]` | **Custom Asset Thumbnail Generator** | 규격 통일된 썸네일 일괄 렌더 + 저장 |
-| `[ ]` | **Editor Startup Profiler** | 에디터 시작 시간 단계별 측정 → 느린 플러그인/모듈 지목 |
+| `[검]` | **Editor Startup Profiler** | 에디터 시작 시간 단계별 측정 → 느린 플러그인/모듈 지목 |
 | `[ ]` | **Hotkey Conflict Detector** | 에디터 단축키 충돌 목록 자동 추출 |
 | `[ ]` | **Content Browser Bookmark Manager** | 자주 쓰는 폴더 경로를 단축 메뉴로 등록하는 에디터 유틸리티 |
 

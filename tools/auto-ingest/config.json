@@ -1,0 +1,56 @@
+{
+  "ueProjectPath": "",
+  "workspacePath": "D:/workspace",
+  "watchTargets": [
+    {
+      "id": "build-log",
+      "pattern": "Saved/Logs/*.log",
+      "parser": "build-log",
+      "rawPath": "raw/auto/logs/",
+      "wikiCategory": "debugging",
+      "wikiTags": ["build", "ue5"],
+      "minSizeKB": 1,
+      "debounceSeconds": 600
+    },
+    {
+      "id": "graphics-audit",
+      "pattern": "Saved/Profiling/GraphicsAudit_*.json",
+      "parser": "profiling-json",
+      "rawPath": "raw/auto/profiling/",
+      "wikiCategory": "pattern",
+      "wikiTags": ["profiling", "performance", "graphics"],
+      "minSizeKB": 1,
+      "debounceSeconds": 0
+    },
+    {
+      "id": "foliage-report",
+      "pattern": "Saved/FoliageReport_*.csv",
+      "parser": "profiling-csv",
+      "rawPath": "raw/auto/profiling/",
+      "wikiCategory": "pattern",
+      "wikiTags": ["profiling", "foliage"],
+      "minSizeKB": 1,
+      "debounceSeconds": 0
+    },
+    {
+      "id": "collision-audit",
+      "pattern": "Saved/CollisionAudit_*.csv",
+      "parser": "profiling-csv",
+      "rawPath": "raw/auto/profiling/",
+      "wikiCategory": "pattern",
+      "wikiTags": ["profiling", "collision"],
+      "minSizeKB": 1,
+      "debounceSeconds": 0
+    },
+    {
+      "id": "startup-profile",
+      "pattern": "Saved/Profiling/StartupProfile_*.json",
+      "parser": "profiling-json",
+      "rawPath": "raw/auto/profiling/",
+      "wikiCategory": "pattern",
+      "wikiTags": ["profiling", "startup"],
+      "minSizeKB": 1,
+      "debounceSeconds": 0
+    }
+  ]
+}

@@ -72,4 +72,38 @@ if [ -f "$STATE_FILE" ]; then
 fi
 
 echo "==================================="
+
+# --- 어드바이저 검수 대기 항목 체크 ---
+# [기] 상태 = 기획서 작성 완료, 어드바이저 검수 전 — 구현 착수 금지
+PLAN_FILE="D:/workspace/plans/ta-tools-plan.md"
+if [ -f "$PLAN_FILE" ]; then
+    PENDING_REVIEW=$(grep -oP '`\[기\]`\s*\|\s*\*\*\K[^*]+' "$PLAN_FILE" 2>/dev/null)
+    if [ -n "$PENDING_REVIEW" ]; then
+        echo ""
+        echo "🔍 어드바이저 검수 대기 중인 기획서:"
+        echo "$PENDING_REVIEW" | while read -r tool; do
+            echo "   ⚠️  $tool"
+        done
+        echo "   → 구현 착수 전 반드시 oh-my-claudecode:architect 검수 필요"
+    fi
+fi
+
+# --- Auto-Ingest 대기 항목 체크 (디렉토리 큐) ---
+QUEUE_PENDING_DIR="D:/workspace/raw/auto/queue/pending"
+if [ -d "$QUEUE_PENDING_DIR" ]; then
+    COUNT=$(ls "$QUEUE_PENDING_DIR"/*.json 2>/dev/null | wc -l | tr -d ' ')
+    if [ "$COUNT" -gt 0 ]; then
+        echo ""
+        if [ "$COUNT" -gt 20 ]; then
+            echo "⚡ Auto-Ingest 대기 항목: ${COUNT}개 (20개 초과 — 수동 검토 권장)"
+            echo "   디렉토리: $QUEUE_PENDING_DIR"
+            echo "   항목이 많습니다. 우선순위를 직접 선택하거나 일괄 처리 여부를 결정하세요."
+        else
+            echo "⚡ Auto-Ingest 대기 항목: ${COUNT}개"
+            echo "   디렉토리: $QUEUE_PENDING_DIR"
+            echo "   처리 방법: pending-ingest 처리 절차에 따라 wiki_ingest를 호출하세요."
+        fi
+    fi
+fi
+
 exit 0

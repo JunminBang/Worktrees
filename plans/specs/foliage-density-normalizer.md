@@ -1,7 +1,7 @@
 # 기획서 — Foliage Density & Masked Cost Auditor
 
 > 작성일: 2026-04-25  
-> 수정일: 2026-04-26 (Masked 재질 비용 분석 통합)  
+> 수정일: 2026-04-26 (아키텍트 검수 반영)  
 > 카테고리: 월드 빌딩 / 퍼포먼스 프로파일링  
 > 우선순위: 중
 
@@ -30,9 +30,21 @@
 
 ---
 
-## 분석 탭 구성
+## 수집 범위 (인스턴스 소스)
 
-도구는 두 개의 분석 탭으로 구성된다.
+> ⚠️ `AInstancedFoliageActor` 단독 순회로는 누락이 발생한다. 아래 3가지를 모두 수집해야 한다.
+
+| 소스 | 수집 방법 | 비고 |
+|---|---|---|
+| `AInstancedFoliageActor::FoliageInfos` | TActorIterator | Foliage Mode로 배치된 인스턴스 |
+| `UHierarchicalInstancedStaticMeshComponent` | TObjectIterator | 아티스트가 BP로 직접 배치한 풀숲 등 |
+| `AProceduralFoliageVolume` | TActorIterator | Procedural Foliage Spawner 생성 인스턴스 |
+| `ULandscapeGrassType` | **1차 릴리스 제외** | GPU-side 인스턴스 — 위치 기반 측정 불가 |
+| PCG Component 인스턴스 | **1차 릴리스 제외** | PCG는 별도 스코프 |
+
+---
+
+## 분석 탭 구성
 
 ### 탭 A — 밀도 분석
 
@@ -48,12 +60,22 @@
 
 | 기능 | 설명 |
 |---|---|
-| Masked 메시 목록 수집 | 레벨 내 Masked 재질 사용 폴리지 전체 열거 |
-| Cast Shadow 감사 | Masked + Cast Shadow ON 인스턴스 수 집계 → 불필요한 그림자 후보 탐지 |
-| Opacity Mask Instruction 수집 | 머티리얼별 Shader Stats에서 Instruction 수 추출 |
-| 원거리 Masked 탐지 | 지정 거리(기본: 5000 UU) 이상 배치된 Masked 메시 목록 |
-| Two-Sided Foliage 미설정 탐지 | Masked 폴리지 중 Two-Sided Foliage 셰이딩 모델 미사용 메시 |
+| Masked 메시 목록 수집 | `UMaterialInterface::GetBlendMode() == BLEND_Masked` 기준. MID/OverrideMaterials 우선순위 적용 |
+| Cast Shadow 감사 | FoliageType → HISMC → StaticMesh → 머티리얼 **4계층 AND** 체크 후 판정 |
+| 원거리 Masked 탐지 | 지정 거리(기본: 5000 UU) 이상 + Cull Distance 밖 인스턴스 제외 |
+| Two-Sided Foliage 미설정 탐지 | `GetShadingModels().HasShadingModel(MSM_TwoSidedFoliage)` — MI 오버라이드 포함 |
 | Masked 밀도 오버레이 | 탭 A 힌트맵 위에 Masked 인스턴스 밀도를 레이어로 오버레이 |
+| Pixel Shader Instruction 수집 | **2차 릴리스** — `FMaterialStatsUtils` + 컴파일 완료 폴링 필요 |
+
+---
+
+## 머티리얼 조회 우선순위
+
+```
+FoliageType.OverrideMaterials
+  → StaticMesh.StaticMaterials
+    → Default Material
+```
 
 ---
 
@@ -63,24 +85,37 @@
 |---|---|
 | 밀도 과밀 구간 | 삭제 후보 수량 제시 |
 | 밀도 과소 구간 | 추가 권장 수량 제시 |
-| Masked + Cast Shadow ON + 소형 메시 | 그림자 비활성화 후보 (잔디, 작은 잎류) |
-| 원거리 Masked 메시 | Dithered LOD → Opaque Imposter 전환 후보 |
-| Opacity Mask Instruction 50개 이상 | 마스크 단순화 검토 대상 |
+| Masked + Cast Shadow ON (4계층 AND) + 소형 메시 + 카메라 거리 밖 | 그림자 비활성화 후보 |
+| 원거리 Masked 메시 (Cull Distance 이내) | Dithered LOD → Opaque Imposter 전환 후보 |
 | Masked + Two-Sided 미설정 | Two-Sided Foliage 셰이딩 모델 전환 후보 |
-| Masked 과밀 구간 (밀도 × Instruction 곱 기준) | Masked 비용 핫스팟으로 우선 최적화 대상 지목 |
+| Masked 과밀 구간 (밀도 × 화면 점유 면적 기준) | Masked 비용 핫스팟으로 우선 최적화 대상 지목 |
 
 ---
 
-## 구현 방향
+## 구현 단계 (Phase)
 
-- `AInstancedFoliageActor` 순회로 인스턴스 위치 / 재질 / Cast Shadow 수집
-- 월드 바운드 기준 그리드 분할 (기본 셀 크기: 1000 UU)
-- 머티리얼 블렌드 모드 `BLEND_Masked` 여부로 Masked 메시 필터링
-- Opacity Mask Instruction 수: `UMaterial::GetMaterialResource()->GetNumInstructions()` 또는 `stat ShaderCompiling` 경유
-- Two-Sided Foliage 셰이딩 모델: `UMaterial::ShadingModel == MSM_TwoSidedFoliage` 확인
-- 힌트맵: 밀도 레이어(파란색) + Masked 밀도 레이어(빨간색) 오버레이
-- 수십만 인스턴스 순회는 비동기 처리
-- Editor Utility Widget으로 파라미터 조정
+> ⚠️ 기획서 완료 기준 순서와 **역순**으로 구현하는 것이 안전하다.
+
+### Phase 1 — 데이터 수집 레이어
+1. IFA + HISMC + ProceduralFoliage 통합 enumerator
+2. HLOD Actor(`AWorldPartitionHLOD`) 필터 제외
+
+### Phase 2 — 머티리얼 메타 수집
+3. Blend Mode, ShadingModel(`GetShadingModels()`), Cast Shadow 4계층 체크
+4. 머티리얼 조회 우선순위 적용 (OverrideMaterials → StaticMaterials)
+
+### Phase 3 — 탭 B (Masked 정성 분석, Instruction 제외)
+5. Cast Shadow 감사, Two-Sided 미설정 탐지, 원거리 Masked 탐지
+
+### Phase 4 — 탭 A (밀도 그리드)
+6. 그리드 분할, 평균/편차, 힌트맵
+
+### Phase 5 — UI / CSV / 오버레이
+7. Editor Utility Widget, Masked 밀도 오버레이, CSV 저장
+
+### Phase 6 — Instruction 수집 (2차 릴리스)
+8. `FMaterialStatsUtils::GetRepresentativeInstructionCounts()` + `FMaterial::IsCompilationFinished()` 폴링
+9. 임계값: Pixel Shader 전체 Instruction 100개 이상 (50은 평범한 PBR도 80+ → 오탐 과다)
 
 ---
 
@@ -91,7 +126,6 @@
 - 셀 크기 (기본값: 1000 UU)
 - 밀도 편차 임계값 (기본값: ±30%)
 - 원거리 Masked 탐지 거리 (기본값: 5000 UU)
-- Opacity Mask Instruction 경고 임계값 (기본값: 50개)
 - 폴리지 타입 필터 (선택)
 
 **출력**
@@ -103,18 +137,22 @@
 
 ## 제약 / 리스크
 
-- 인스턴스 수가 수십만 개일 경우 순회 성능 이슈 → 비동기 처리 필수
-- World Partition 환경에서는 로드된 셀 범위에서만 측정 가능
-- Opacity Mask Instruction 수는 셰이더 컴파일 후에만 정확히 수집 가능
+| 항목 | 내용 |
+|---|---|
+| Landscape Grass Type | GPU-side 인스턴스 — 위치 기반 측정 불가. 1차 릴리스 스코프 외 |
+| World Partition | 현재 로드된 셀 범위에서만 측정 가능. "현재 로드 영역" 명시 필수 |
+| 인스턴스 수십만 개 | 비동기 처리 필수 |
+| Instruction 수집 | 셰이더 컴파일 완료 후에만 정확. 2차 릴리스로 분리 |
+| PCG 인스턴스 | 1차 릴리스 스코프 외 |
 
 ---
 
 ## 완료 기준
 
-- [ ] 탭 A: 그리드 밀도 측정 + 과밀/과소 탐지 + 힌트맵
-- [ ] 탭 B: Masked 메시 목록 + Cast Shadow 감사 + Instruction 수집
-- [ ] 탭 B: 원거리 Masked / Two-Sided 미설정 탐지
-- [ ] Masked 밀도 오버레이 (힌트맵 레이어)
-- [ ] 자동 제안 목록 출력
-- [ ] CSV 리포트 저장
+- [ ] Phase 1: IFA + HISMC + ProceduralFoliage 통합 수집
+- [ ] Phase 2: 머티리얼 메타 수집 (4계층 Cast Shadow 포함)
+- [ ] Phase 3: 탭 B Masked 정성 분석
+- [ ] Phase 4: 탭 A 그리드 밀도 측정
+- [ ] Phase 5: Masked 오버레이 + CSV 저장 + Editor Utility Widget
 - [ ] wiki에 패턴 ingest
+- [ ] Phase 6 (2차): Instruction 수집 + 임계값 적용
