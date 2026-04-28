@@ -25,11 +25,34 @@ workspace/
 ├── CLAUDE.md                  # AI 협업 운영 지침 (Harness 핵심 문서)
 ├── plans/                     # TA 도구 기획서
 │   ├── ta-tools-plan.md       # 전체 도구 목록 (41개)
-│   └── specs/                 # 도구별 상세 기획서
-│       ├── draw-call-budget-tracker.md
-│       ├── foliage-density-normalizer.md
+│   └── specs/                 # 도구별 상세 기획서 (15개)
+│       ├── asset-naming-validator.md
+│       ├── actor-tag-auditor.md
+│       ├── blueprint-compile-watchdog.md
 │       ├── collision-complexity-auditor.md
-│       └── editor-startup-profiler.md
+│       ├── draw-call-budget-tracker.md
+│       ├── editor-startup-profiler.md
+│       ├── foliage-density-normalizer.md
+│       ├── level-health-checker.md
+│       ├── light-complexity-reporter.md
+│       ├── lod-auto-generator.md
+│       ├── material-instance-batcher.md
+│       ├── material-param-propagator.md
+│       ├── orphan-asset-finder.md
+│       ├── shader-complexity-visualizer.md
+│       ├── streaming-level-validator.md
+│       ├── texture-audit-tool.md
+│       ├── uv-density-checker.md
+│       └── vertex-color-painter-batch.md
+├── tools/
+│   └── auto-ingest/           # Wiki Auto-Ingest Hook [완료]
+│       ├── config.json        # 감시 대상 설정 (UE 프로젝트 경로 포함)
+│       ├── scan.ps1           # 원샷 스캔 (session-start에서 호출)
+│       ├── watcher.ps1        # 실시간 FileSystemWatcher
+│       └── parsers/
+│           ├── build-log.ps1
+│           ├── profiling-json.ps1
+│           └── profiling-csv.ps1
 ├── wiki/                      # AI가 유지하는 지식 베이스
 │   ├── index.md               # 위키 인덱스
 │   ├── systems/               # UE5 시스템별 요약
@@ -37,6 +60,7 @@ workspace/
 │   └── papers/                # 그래픽스 논문 요약
 ├── raw/                       # 원본 소스 자료 (읽기 전용)
 │   ├── INDEX.md
+│   ├── auto/                  # Auto-Ingest 자동 생성 Markdown (git 제외)
 │   └── graphics/              # 그래픽스 연구 논문
 └── docs/
     └── engine-reference/      # UE5.7 버전 고정 API 레퍼런스
@@ -63,23 +87,54 @@ workspace/
 
 총 **13개 카테고리 / 41개 도구** 기획 중. 상세 목록은 [plans/ta-tools-plan.md](plans/ta-tools-plan.md) 참조.
 
-| 카테고리 | 대표 도구 |
-|---|---|
-| 에셋 파이프라인 | Asset Naming Validator, Texture Audit Tool |
-| 씬 / 레벨 관리 | Level Health Checker, Light Complexity Reporter |
-| 렌더링 / 머티리얼 | Shader Complexity Visualizer, UV Density Checker |
-| 애니메이션 / 리깅 | Anim Notify Auditor, Root Motion Validator |
-| VFX / Niagara | Niagara Budget Monitor, VFX Culling Validator |
-| 퍼포먼스 프로파일링 | **Draw Call Budget Tracker**, Collision Complexity Auditor |
-| 월드 빌딩 | **Foliage Density & Masked Cost Auditor**, PCG Graph Validator |
-| 오디오 | Sound Asset Auditor |
-| 에디터 UX | **Editor Startup Profiler**, Hotkey Conflict Detector |
-| 버전 관리 | Large Binary Watcher, Changenote Auto-Generator |
-| 플랫폼 / 인증 | Icon & Splash Spec Validator, Localization String Auditor |
-| 빌드 / QA | Blueprint Compile Watchdog, Cook Report Diff |
-| Wiki 연동 | Bug Pattern Extractor, Scene Scan to Wiki |
+| 카테고리 | 대표 도구 | 기획서 |
+|---|---|---|
+| 에셋 파이프라인 | Asset Naming Validator, LOD Auto Generator, Texture Audit Tool | `[검]` |
+| 씬 / 레벨 관리 | Level Health Checker, Light Complexity Reporter | `[검]` |
+| 렌더링 / 머티리얼 | Shader Complexity Visualizer, UV Density Checker, Vertex Color Painter Batch | `[검]` |
+| 애니메이션 / 리깅 | Anim Notify Auditor, Root Motion Validator | `[ ]` |
+| VFX / Niagara | Niagara Budget Monitor, VFX Culling Validator | `[ ]` |
+| 퍼포먼스 프로파일링 | Draw Call Budget Tracker, Collision Complexity Auditor | `[검]` |
+| 월드 빌딩 | Foliage Density Normalizer, PCG Graph Validator | `[검]` / `[ ]` |
+| 오디오 | Sound Asset Auditor | `[ ]` |
+| 에디터 UX | Editor Startup Profiler, Hotkey Conflict Detector | `[검]` / `[ ]` |
+| 버전 관리 | Large Binary Watcher, Changenote Auto-Generator | `[ ]` |
+| 플랫폼 / 인증 | Icon & Splash Spec Validator, Localization String Auditor | `[ ]` |
+| 빌드 / QA | Blueprint Compile Watchdog, Cook Report Diff | `[검]` / `[ ]` |
+| Wiki 연동 | **Wiki Auto-Ingest Hook** ✅ | `[x]` |
 
-굵게 표시된 도구는 상세 기획서 작성 완료.
+### 진행 상태 기준
+
+| 상태 | 의미 |
+|---|---|
+| `[ ]` | 미착수 |
+| `[기]` | 기획서 작성 완료 (어드바이저 검수 전) |
+| `[검]` | 기획서 검수 완료 (구현 대기) |
+| `[~]` | 구현 중 |
+| `[x]` | 완료 |
+
+---
+
+## Wiki Auto-Ingest Hook
+
+빌드 로그 / 프로파일링 결과물을 자동으로 `raw/auto/`에 저장하고, 세션 시작 시 wiki ingest를 트리거하는 파이프라인.
+
+```
+UE 프로젝트 파일 변경
+        ↓
+tools/auto-ingest/scan.ps1   ← session-start 훅에서 자동 호출
+        ↓
+raw/auto/queue/pending/      ← 처리 대기 큐 (디렉토리 큐, 원자적)
+        ↓
+Claude 세션 시작 시 알림 → wiki_ingest 호출
+        ↓
+raw/auto/queue/done/         ← 완료 항목
+```
+
+**사용 방법**:
+1. `tools/auto-ingest/config.json`에서 `ueProjectPath` 설정
+2. 세션 시작 시 자동으로 scan.ps1 실행 (pending 항목 알림)
+3. 실시간 감시가 필요하면 별도 터미널에서 `watcher.ps1` 실행
 
 ---
 
