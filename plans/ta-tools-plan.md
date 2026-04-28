@@ -45,10 +45,10 @@
 | 상태 | 도구명 | 설명 |
 |---|---|---|
 | `[검]` | **Asset Naming Validator** | 에셋명 컨벤션(`SM_`, `T_`, `M_` 등) 위반 자동 탐지 + 일괄 리네임 |
-| `[ ]` | **LOD Auto Generator** | StaticMesh 임포트 시 LOD 자동 생성 및 기준치 적용 |
-| `[ ]` | **Texture Audit Tool** | 해상도 pow2 미준수, 과다 메모리 텍스처 탐지, 압축 포맷 일괄 변경 |
-| `[ ]` | **Orphan Asset Finder** | 참조 없는 에셋 탐지 → 삭제 목록 생성 |
-| `[ ]` | **Material Instance Batcher** | 같은 부모 Material 공유 MI 묶음 분석 + 리다이렉트 정리 |
+| `[검]` | **LOD Auto Generator** | StaticMesh 임포트 시 LOD 자동 생성 및 기준치 적용 |
+| `[검]` | **Texture Audit Tool** | 해상도 pow2 미준수, 과다 메모리 텍스처 탐지, 압축 포맷 일괄 변경 |
+| `[검]` | **Orphan Asset Finder** | 참조 없는 에셋 탐지 → 삭제 목록 생성 |
+| `[검]` | **Material Instance Batcher** | 같은 부모 Material 공유 MI 묶음 분석 + 리다이렉트 정리 |
 
 ---
 
@@ -57,9 +57,9 @@
 | 상태 | 도구명 | 설명 |
 |---|---|---|
 | `[검]` | **Level Health Checker** | 겹친 액터, 음수 Z, 극단 스케일, PlayerStart 중복 자동 탐지 |
-| `[ ]` | **Light Complexity Reporter** | Dynamic Light 수, 영향 반경 중복 구간 시각화 |
-| `[ ]` | **Actor Tag Auditor** | GameplayTag 미부여 액터 목록, 태그 스키마 위반 탐지 |
-| `[ ]` | **Streaming Level Validator** | World Partition / Level Streaming 설정 일관성 검사 |
+| `[검]` | **Light Complexity Reporter** | Dynamic Light 수, 영향 반경 중복 구간 시각화 |
+| `[검]` | **Actor Tag Auditor** | GameplayTag 미부여 액터 목록, 태그 스키마 위반 탐지 |
+| `[검]` | **Streaming Level Validator** | World Partition / Level Streaming 설정 일관성 검사 |
 
 ---
 
@@ -67,10 +67,10 @@
 
 | 상태 | 도구명 | 설명 |
 |---|---|---|
-| `[ ]` | **Shader Complexity Visualizer** | 지정 레벨 머티리얼 인스트럭션 수 상위 N개 리포트 |
-| `[ ]` | **Material Param Propagator** | 부모 Material 파라미터 변경 → 연결된 MI 전체 일괄 반영 |
-| `[ ]` | **UV Density Checker** | Texel Density 기준치 벗어난 메시 탐지 + 힌트맵 출력 |
-| `[ ]` | **Vertex Color Painter Batch** | 선택 메시 전체에 동일 Vertex Color 레이어 일괄 도포 |
+| `[검]` | **Shader Complexity Visualizer** | 지정 레벨 머티리얼 인스트럭션 수 상위 N개 리포트 |
+| `[검]` | **Material Param Propagator** | 부모 Material 파라미터 변경 → 연결된 MI 전체 일괄 반영 |
+| `[검]` | **UV Density Checker** | Texel Density 기준치 벗어난 메시 탐지 + 힌트맵 출력 |
+| `[검]` | **Vertex Color Painter Batch** | 선택 메시 전체에 동일 Vertex Color 레이어 일괄 도포 |
 
 ---
 
@@ -99,7 +99,7 @@
 |---|---|---|
 | `[ ]` | **Cook Report Diff** | 두 빌드 간 패키지 크기 변동 자동 비교 + 원인 에셋 지목 |
 | `[검]` | **Blueprint Compile Watchdog** | Commandlet로 전체 BP 컴파일 → 에러/경고 CSV 출력 |
-| `[~]` | **Wiki Auto-Ingest Hook** | 빌드/디버그 로그 자동으로 `raw/`에 저장 후 wiki ingest 트리거 |
+| `[x]` | **Wiki Auto-Ingest Hook** | 빌드/디버그 로그 자동으로 `raw/`에 저장 후 wiki ingest 트리거 |
 
 ---
 
