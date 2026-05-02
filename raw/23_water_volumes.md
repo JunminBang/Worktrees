@@ -205,3 +205,16 @@ PostProcessVolume의 디테일 패널 → `Infinite Extent (Unbound)` 체크 시
 - [ ] Overlap 이벤트가 Blueprint에서 바인딩되어 있는가?
 - [ ] Collision 설정에서 적절한 오브젝트 타입만 오버랩되도록 필터링했는가?
 - [ ] 볼륨 크기가 트리거 의도 구역과 일치하는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [44_character_movement.md](44_character_movement.md) | Swimming 모드 — PhysicsVolume bWaterVolume과 부력 연동 |
+| [25_lighting_system.md](25_lighting_system.md) | PostProcessVolume — 수중 조명 및 실내 환경 설정 |
+| [20_ray_tracing.md](20_ray_tracing.md) | RT 파라미터 오버라이드 — PostProcessVolume 내 RT 품질 제어 |
+| [35_landscape_advanced.md](35_landscape_advanced.md) | 랜드스케이프 — 강/호수와 지형 높이맵 연동 |
+| [39_volumetric_clouds.md](39_volumetric_clouds.md) | Volumetric Fog — 수면 위 안개 및 날씨 효과 연동 |
+| [48_collision_trace.md](48_collision_trace.md) | 트리거 볼륨 — Overlap 이벤트와 Hit 이벤트 처리 패턴 |

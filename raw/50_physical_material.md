@@ -163,3 +163,16 @@ Chaos 파괴 시스템과 Physical Material 연동:
 ### 총탄 충격
 - [ ] 총탄 Hit Result에서 Physical Material을 읽는 로직이 있는가?
 - [ ] 각 표면 타입별 데칼 + 파티클 + 사운드 세트가 준비되어 있는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [48_collision_trace.md](48_collision_trace.md) | Line Trace Hit Result → Physical Material → Surface Type 읽기 |
+| [04_audio_effects.md](04_audio_effects.md) | Surface Type별 SoundWave/SoundCue 재생 |
+| [32_niagara_advanced.md](32_niagara_advanced.md) | Surface Type별 파티클 이펙트 분기 (먼지, 스파크, 혈흔) |
+| [19_decals.md](19_decals.md) | Surface Type별 데칼 스폰 (탄흔, 핏자국, 흙 자국) |
+| [03_animation_physics.md](03_animation_physics.md) | AnimNotify — 발 소켓 아래로 트레이스해 발소리 표면 결정 |
+| [47_socket_system.md](47_socket_system.md) | 발 소켓 위치에서 Surface Type 감지 후 이펙트 연동 |

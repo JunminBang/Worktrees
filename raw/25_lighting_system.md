@@ -182,3 +182,16 @@
 ### 라이트 채널
 - [ ] 광원과 메시의 채널 번호가 일치하는가?
 - [ ] Channel 0 이외 채널을 쓸 때 의도치 않은 오브젝트가 제외되지 않았는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [02_rendering.md](02_rendering.md) | 그림자 기술 비교 (CSM/VSM/RT Shadow) — 렌더링 파이프라인 맥락 |
+| [20_ray_tracing.md](20_ray_tracing.md) | RT Shadows — 레이 트레이싱 그림자로 전환 시 광원 설정 영향 |
+| [39_volumetric_clouds.md](39_volumetric_clouds.md) | Sky Atmosphere + Directional Light 연동 — 시간대 변화 하늘 |
+| [23_water_volumes.md](23_water_volumes.md) | PostProcessVolume — 실내/수중 조명 환경 설정 |
+| [35_landscape_advanced.md](35_landscape_advanced.md) | 야외 Directional Light + Sky Light — 지형 조명 셋업 |
+| [53_profiling_optimization.md](53_profiling_optimization.md) | 불필요한 Cast Shadows OFF — 성능 최적화 |

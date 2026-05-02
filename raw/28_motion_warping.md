@@ -154,3 +154,16 @@ Control Rig / IK: 손이 정확히 손잡이/홈에 닿도록 미세 보정
 - [ ] PIE에서 다양한 위치/각도에서 테스트했는가?
 - [ ] 워프 범위를 초과하는 극단적 위치에서도 크래시/오류가 없는가?
 - [ ] 워프 후 회전이 의도한 방향을 향하는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [03_animation_physics.md](03_animation_physics.md) | AnimMontage — Motion Warping이 몽타주 재생 구간에 동작 |
+| [15_control_rig.md](15_control_rig.md) | IK Rig — 워핑된 위치에서 발/손 IK 후처리 연동 |
+| [44_character_movement.md](44_character_movement.md) | 캐릭터 이동 — 워프 중 루트 모션과 CharacterMovement 충돌 처리 |
+| [48_collision_trace.md](48_collision_trace.md) | Line Trace — 워프 목표 지점의 표면·장애물 감지 |
+| [47_socket_system.md](47_socket_system.md) | 소켓 — 워프 후 어태치 포인트 재정렬 확인 |
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | GAS — Ability 내에서 Warp Target 설정 패턴 |

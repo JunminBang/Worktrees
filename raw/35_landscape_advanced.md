@@ -191,3 +191,16 @@
 - [ ] Nanite가 활성화되어 있는가?
 - [ ] 폴리지 밀도가 프레임 예산 안에 있는가?
 - [ ] 레이어 수가 5개 이하인가? (많을수록 셰이더 복잡도 증가)
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [43_foliage_system.md](43_foliage_system.md) | Foliage — 랜드스케이프 레이어 연동 자동 식생 배치 |
+| [11_pcg_procedural.md](11_pcg_procedural.md) | PCG — 높이맵·경사 데이터 기반 절차적 오브젝트 배치 |
+| [40_world_partition.md](40_world_partition.md) | World Partition — 대형 랜드스케이프 셀 스트리밍 및 HLOD |
+| [24_material_advanced.md](24_material_advanced.md) | 머티리얼 레이어 — LandscapeLayerBlend와 Material Layer 통합 |
+| [25_lighting_system.md](25_lighting_system.md) | 야외 Directional Light + Sky Light — 지형 조명 셋업 |
+| [14_textures_advanced.md](14_textures_advanced.md) | Runtime Virtual Texture — 도로·데칼을 랜드스케이프에 블렌딩 |

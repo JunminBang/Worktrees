@@ -315,3 +315,16 @@ NavMesh:
 | AI가 플레이어 못 찾음 | Perception 미설정 | AIPerceptionComponent + SightConfig 추가 |
 | AI가 엉뚱한 곳으로 감 | NavMesh 생성 범위 부족 | BoundsVolume 크기 확대 |
 | AI가 경사면에서 미끄러짐 | Step Height 부족 | Agent Step Height 값 증가 |
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [01_gameplay_framework.md](01_gameplay_framework.md) | AIController — PlayerController와 같은 Controller 계층 구조 |
+| [03_animation_physics.md](03_animation_physics.md) | AI 캐릭터 애니메이션 State Machine — 이동/공격 상태 전환 |
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | GAS — AI가 GameplayAbility로 스킬 사용 및 상태이상 처리 |
+| [48_collision_trace.md](48_collision_trace.md) | Trace — EQS Trace Test, AI 시야 Ray 감지 |
+| [16_data_management.md](16_data_management.md) | GameplayTag — Blackboard 값 대신 Tag로 AI 상태 표현 |
+| [27_mass_entity.md](27_mass_entity.md) | Mass Entity — 수백~수천 AI 군중 최적화 대안 |

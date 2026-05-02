@@ -151,3 +151,16 @@ Level Instance 안에 또 다른 Level Instance를 배치할 수 있습니다:
 - [ ] 완성된 반복 모듈을 Packed Level Actor로 변환했는가?
 - [ ] World Partition 스트리밍 설정이 적절한가?
 - [ ] 중첩이 너무 깊어 편집이 복잡해지지 않았는가? (3단계 이하 권장)
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [40_world_partition.md](40_world_partition.md) | World Partition — 레벨 인스턴스 단위 셀 스트리밍 통합 |
+| [42_staticmesh_advanced.md](42_staticmesh_advanced.md) | 스태틱 메시 — Packed Level Actor로 메시 병합 후 성능 최적화 |
+| [07_world_network_assets.md](07_world_network_assets.md) | 레벨 스트리밍 — LevelStreamingDynamic과 Level Instance 비교 |
+| [35_landscape_advanced.md](35_landscape_advanced.md) | 랜드스케이프 — 지형 위 모듈형 건물 배치 구성 |
+| [11_pcg_procedural.md](11_pcg_procedural.md) | PCG — 절차적으로 생성된 Level Instance 배치 패턴 |
+| [53_profiling_optimization.md](53_profiling_optimization.md) | 드로우콜 최적화 — Packed Level Actor ISM 통합 효과 측정 |

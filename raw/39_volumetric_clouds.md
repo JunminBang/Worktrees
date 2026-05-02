@@ -191,3 +191,16 @@ Directional Light의 방향(태양 각도)을 바꾸면:
 - [ ] 볼류메트릭 구름 + 볼류메트릭 안개 동시 사용 시 GPU 비용을 확인했는가?
 - [ ] 모바일/저사양 플랫폼에서는 볼류메트릭 기능 비활성화 경로가 있는가?
 - [ ] `Stat GPU` 명령으로 VolumetricCloud 비용을 측정했는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [25_lighting_system.md](25_lighting_system.md) | Sky Atmosphere + Directional Light — 시간대 변화 하늘과 구름 연동 |
+| [35_landscape_advanced.md](35_landscape_advanced.md) | 랜드스케이프 — 야외 씬에서 구름·안개와 지형 조명 통합 |
+| [24_material_advanced.md](24_material_advanced.md) | MPC — Material Parameter Collection으로 런타임 날씨 파라미터 제어 |
+| [23_water_volumes.md](23_water_volumes.md) | Exponential Height Fog — 수면·지표 안개와 볼류메트릭 구름 조합 |
+| [53_profiling_optimization.md](53_profiling_optimization.md) | GPU 프로파일링 — VolumetricCloud/Fog 렌더링 비용 측정 |
+| [02_rendering.md](02_rendering.md) | 렌더링 파이프라인 — 볼류메트릭 요소가 포함된 전체 패스 흐름 |

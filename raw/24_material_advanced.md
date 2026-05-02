@@ -194,3 +194,16 @@ MPC_WorldParameters (Material Parameter Collection 에셋)
 - [ ] Shader Complexity 뷰 모드에서 빨간 영역(고비용 셰이더)이 있는가?
 - [ ] Stats 패널에서 Instruction Count를 확인했는가?
 - [ ] 불필요한 텍스처 샘플러가 중복 사용되지 않는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [02_rendering.md](02_rendering.md) | 머티리얼 셰이딩 모델 — 렌더링 파이프라인에서의 머티리얼 역할 |
+| [14_textures_advanced.md](14_textures_advanced.md) | Virtual Texture Sample 노드, sRGB 설정, 텍스처 압축 |
+| [35_landscape_advanced.md](35_landscape_advanced.md) | Landscape 머티리얼 레이어 — Material Layer + RVT 통합 |
+| [19_decals.md](19_decals.md) | Deferred Decal 도메인 — 데칼용 머티리얼 설정 |
+| [53_profiling_optimization.md](53_profiling_optimization.md) | Shader Complexity 뷰 — 머티리얼 비용 시각화 |
+| [26_skeletal_mesh_lod.md](26_skeletal_mesh_lod.md) | MID — 런타임 Morph Target 값으로 머티리얼 파라미터 제어 |

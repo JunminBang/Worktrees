@@ -167,3 +167,16 @@ ChaosCloth는 천, 옷, 깃발, 망토 등을 **물리적으로 시뮬레이션*
 - [ ] 원거리 LOD에서 클로스가 비활성화되어 있는가?
 - [ ] Self Collision이 필요한 경우에만 활성화되어 있는가?
 - [ ] Wind 반응이 레벨의 바람 방향과 연동되어 있는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [03_animation_physics.md](03_animation_physics.md) | AnimBlueprint — 스켈레탈 메시 LOD별 AnimBP 최적화 연동 |
+| [15_control_rig.md](15_control_rig.md) | Control Rig — 본 계층 구조와 IK 설정이 LOD에 미치는 영향 |
+| [44_character_movement.md](44_character_movement.md) | 캐릭터 이동 속도·거리에 따른 LOD 전환 타이밍 |
+| [24_material_advanced.md](24_material_advanced.md) | LOD Material — 원거리 메시에 단순화된 머티리얼 할당 |
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | MID — GAS에서 Morph Target 값으로 머티리얼 파라미터 제어 |
+| [47_socket_system.md](47_socket_system.md) | 소켓 — LOD 전환 시 장비/이펙트 어태치 유지 여부 확인 |

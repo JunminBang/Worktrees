@@ -242,3 +242,17 @@ GE_PoisonDamage 설정:
 - [ ] `Replication Mode`가 환경(싱글/멀티)에 맞게 설정되어 있는가?
 - [ ] AttributeSet이 ASC에 등록되어 있는가?
 - [ ] 사용하는 GameplayTag가 프로젝트 세팅에 등록되어 있는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [01_gameplay_framework.md](01_gameplay_framework.md) | Actor/Character — ASC를 부착하는 기반 클래스 |
+| [16_data_management.md](16_data_management.md) | GameplayTag 등록 및 관리, DataAsset으로 어빌리티 설정 관리 |
+| [21_blueprint_advanced.md](21_blueprint_advanced.md) | Blueprint Interface — GA 발동 입력 처리 패턴 |
+| [48_collision_trace.md](48_collision_trace.md) | Line Trace — 근접/원거리 공격 히트 감지 후 GE 적용 |
+| [04_audio_effects.md](04_audio_effects.md) | GameplayCue에서 Niagara VFX / SoundCue 연결 |
+| [44_character_movement.md](44_character_movement.md) | GE로 이동속도(MoveSpeed) 어트리뷰트 조정 |
+| [26_skeletal_mesh_lod.md](26_skeletal_mesh_lod.md) | Morph Target — GE 적용 시 표정/상태 변화 비주얼 |

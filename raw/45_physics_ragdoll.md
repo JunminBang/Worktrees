@@ -176,3 +176,16 @@ Physics Asset → 각 Body의 Collision 설정:
 ### 부분 물리
 - [ ] 히트 리액션 시 자연스러운 뼈대에 Impulse가 적용되는가?
 - [ ] Physics Blend Weight로 물리↔애니메이션 전환이 부드러운가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [03_animation_physics.md](03_animation_physics.md) | AnimBlueprint — 물리↔애니메이션 블렌딩 및 클로스 시뮬레이션 |
+| [44_character_movement.md](44_character_movement.md) | CharacterMovement — 사망 시 이동 비활성화 후 래그돌 전환 |
+| [26_skeletal_mesh_lod.md](26_skeletal_mesh_lod.md) | 스켈레탈 메시 — Physics Asset 대상 메시 LOD와 바디 크기 연관 |
+| [48_collision_trace.md](48_collision_trace.md) | 충돌 — 래그돌 충돌 채널·Overlap 이벤트 설정 |
+| [10_chaos_destruction.md](10_chaos_destruction.md) | Chaos 파괴 — 파괴 이벤트에 래그돌 연동 패턴 |
+| [47_socket_system.md](47_socket_system.md) | 소켓 — 래그돌 전환 후 장착 아이템 소켓 어태치 처리 |

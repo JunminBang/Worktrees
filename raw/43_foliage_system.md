@@ -150,3 +150,16 @@ Foliage는 기본으로 **HISM**을 사용합니다:
 ### Landscape 연동
 - [ ] Landscape Layer 이름이 랜드스케이프 머티리얼 레이어 이름과 일치하는가?
 - [ ] 눈/모래 레이어 위에 풀이 자라지 않도록 설정했는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [35_landscape_advanced.md](35_landscape_advanced.md) | 랜드스케이프 레이어 — 페인팅 레이어 연동 자동 폴리지 배치 |
+| [11_pcg_procedural.md](11_pcg_procedural.md) | PCG — 규칙 기반 자동 배치 vs Foliage Tool 비교 |
+| [40_world_partition.md](40_world_partition.md) | World Partition — Data Layer 기반 식생 조건부 로드 |
+| [42_staticmesh_advanced.md](42_staticmesh_advanced.md) | 스태틱 메시 LOD — Foliage HISM LOD 및 컬링 설정 |
+| [27_mass_entity.md](27_mass_entity.md) | Mass Entity — 대규모 동적 오브젝트와 HISM 비교 |
+| [53_profiling_optimization.md](53_profiling_optimization.md) | 인스턴스 드로우콜 — Foliage 밀도·컬링 성능 측정 |

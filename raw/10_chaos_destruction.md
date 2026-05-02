@@ -181,3 +181,17 @@ Blueprint 호출 가능 함수:
 - [ ] PIE에서 파괴 시 프레임 드랍이 없는가?
 - [ ] 파편이 바닥에 무한히 쌓이지 않고 제거되는가?
 - [ ] 파괴 사운드/이펙트가 `BreakEvent.Location`에서 재생되는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [03_animation_physics.md](03_animation_physics.md) | Chaos Physics 솔버 기반 — 래그돌과 같은 물리 시스템 |
+| [45_physics_ragdoll.md](45_physics_ragdoll.md) | Physics Asset — 파괴 오브젝트와 캐릭터 물리 상호작용 |
+| [32_niagara_advanced.md](32_niagara_advanced.md) | BreakEvent.Location에서 파편 파티클/먼지 이펙트 스폰 |
+| [04_audio_effects.md](04_audio_effects.md) | BreakEvent에서 파괴 사운드 재생 |
+| [48_collision_trace.md](48_collision_trace.md) | 폭발/충격 감지 후 파괴 트리거 연동 |
+| [42_staticmesh_advanced.md](42_staticmesh_advanced.md) | Nanite 활성화 — 파괴 파편에도 Nanite LOD 적용 |
+| [50_physical_material.md](50_physical_material.md) | 표면 타입별 파괴 파티클/사운드 분기 |

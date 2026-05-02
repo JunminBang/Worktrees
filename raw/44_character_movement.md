@@ -176,3 +176,16 @@ AI 캐릭터가 NavMesh를 사용하는 경우 CharacterMovementComponent가 경
 
 ### 네트워크 (멀티플레이)
 - [ ] `Network Smoothing Mode`가 게임 타입(FPS/TPS)에 맞게 설정되어 있는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [03_animation_physics.md](03_animation_physics.md) | AnimBlueprint — 이동 속도·방향 기반 Blend Space 연동 |
+| [45_physics_ragdoll.md](45_physics_ragdoll.md) | 래그돌 — 사망 시 CharacterMovement 비활성화 후 물리 전환 |
+| [28_motion_warping.md](28_motion_warping.md) | Motion Warping — 워프 중 루트 모션과 이동 충돌 처리 |
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | GAS — Ability에서 이동 속도·모드 런타임 변경 패턴 |
+| [48_collision_trace.md](48_collision_trace.md) | 충돌 — Max Step Height·Walkable Angle과 콜리전 형태 연관 |
+| [23_water_volumes.md](23_water_volumes.md) | PhysicsVolume — bWaterVolume으로 Swimming 모드 자동 전환 |

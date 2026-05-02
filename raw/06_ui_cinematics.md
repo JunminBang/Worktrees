@@ -325,3 +325,16 @@ UI:
 ✓ 시퀀스 프레임레이트 프로젝트와 일치 여부 확인
 ✓ 배경음악/SFX를 Audio Track으로 동기화
 ```
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [36_sequencer_advanced.md](36_sequencer_advanced.md) | Sequencer 심화 — CineCameraActor, DOF, Movie Render Queue |
+| [17_camera_system.md](17_camera_system.md) | SpringArm, CameraShake, FOV — 시퀀서와 연동되는 카메라 시스템 |
+| [04_audio_effects.md](04_audio_effects.md) | Sequencer Audio Track에 연결하는 SoundWave/SoundCue 에셋 |
+| [16_data_management.md](16_data_management.md) | DataTable — UI에서 표시하는 텍스트/아이콘 데이터 관리 |
+| [18_save_load.md](18_save_load.md) | SaveGame — UI에서 세이브/로드 버튼 이벤트 연동 |
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | GAS — HUD에서 AttributeSet 수치(HP, MP) 바인딩 표시 |

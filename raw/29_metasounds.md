@@ -196,3 +196,16 @@ MetaSound Output을 특정 Submix로 라우팅할 수 있습니다:
 ### Blueprint 연동
 - [ ] 런타임 파라미터 변경 시 `Set Float/Bool/Int Parameter` 노드를 사용하는가?
 - [ ] 오디오 컴포넌트 레퍼런스가 유효한지 (`IsValid`) 확인 후 파라미터를 설정하는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [04_audio_effects.md](04_audio_effects.md) | Sound Cue vs MetaSound — 오디오 시스템 전반 비교 및 전환 가이드 |
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | GAS — Ability 발동 시 MetaSound 파라미터 연동 패턴 |
+| [32_niagara_advanced.md](32_niagara_advanced.md) | Niagara Audio — 파티클 이벤트와 MetaSound 트리거 연동 |
+| [36_sequencer_advanced.md](36_sequencer_advanced.md) | Sequencer — 시네마틱 구간별 MetaSound 파라미터 키프레임 |
+| [21_blueprint_advanced.md](21_blueprint_advanced.md) | Blueprint — MetaSound 파라미터 런타임 변경 패턴 |
+| [06_ui_cinematics.md](06_ui_cinematics.md) | UI 이벤트 — 메뉴/컷씬 전환 시 오디오 상태 제어 |

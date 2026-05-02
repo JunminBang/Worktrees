@@ -174,3 +174,17 @@ InputAction 발동 (예: IA_Jump)
 ✓ InputMappingContext 할당
 ✓ 레벨에 PlayerStart 배치
 ```
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | GAS — Character에 ASC 부착, 능력/수치 시스템 확장 |
+| [44_character_movement.md](44_character_movement.md) | CharacterMovementComponent 상세 — 이동 속도/점프/수영/비행 설정 |
+| [17_camera_system.md](17_camera_system.md) | PlayerController가 관리하는 카메라 시스템 |
+| [13_online_multiplayer.md](13_online_multiplayer.md) | GameMode/GameState 멀티플레이 네트워크 동작 |
+| [21_blueprint_advanced.md](21_blueprint_advanced.md) | Event Dispatcher, Interface — Blueprint 간 통신 패턴 |
+| [16_data_management.md](16_data_management.md) | GameplayTag — 캐릭터 상태 태그 관리 |
+| [03_animation_physics.md](03_animation_physics.md) | SkeletalMesh + AnimBlueprint — 캐릭터 비주얼 |

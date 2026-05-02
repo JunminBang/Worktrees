@@ -178,3 +178,16 @@
 - [ ] **포맷 최소화**: 일반 컬러는 RTF_RGBA8, HDR 필요 시만 RTF_RGBA16f
 - [ ] 미니맵처럼 자주 업데이트 불필요한 경우 캡처 빈도 낮추기
 - [ ] 사용하지 않는 렌더타겟은 해제 (VRAM 상시 점유)
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [24_material_advanced.md](24_material_advanced.md) | Material에서 VT Sample 노드 사용, MPC로 텍스처 파라미터 제어 |
+| [35_landscape_advanced.md](35_landscape_advanced.md) | RVT — 랜드스케이프 레이어 블렌딩 최적화 핵심 |
+| [02_rendering.md](02_rendering.md) | 텍스처가 렌더링 파이프라인에서 처리되는 흐름 |
+| [53_profiling_optimization.md](53_profiling_optimization.md) | stat streaming — 텍스처 스트리밍 풀 초과 확인 |
+| [43_foliage_system.md](43_foliage_system.md) | Foliage 머티리얼에 VT 적용 — 대규모 식생 최적화 |
+| [17_camera_system.md](17_camera_system.md) | Render Target — 보안 카메라/백미러 씬 캡처 |

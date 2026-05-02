@@ -181,3 +181,16 @@ Blueprint에서는 변수 타입을 `Gameplay Tag` 또는 `Gameplay Tag Containe
 - [ ] Project Settings → Gameplay Tags에 등록했는가?
 - [ ] 용도를 `Dev Comment`란에 기록했는가?
 - [ ] Blueprint에서 드롭다운으로 정상 선택되는지 확인했는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | GameplayTag — GAS AbilityTag, StatusTag, CooldownTag 등 사용 |
+| [18_save_load.md](18_save_load.md) | SaveGame — DataTable 참조 ID를 저장하는 패턴 |
+| [21_blueprint_advanced.md](21_blueprint_advanced.md) | Blueprint에서 DataTable Row 읽기/쓰기 패턴 |
+| [05_ai_navigation.md](05_ai_navigation.md) | Blackboard — AI 상태를 GameplayTag로 표현하는 패턴 |
+| [06_ui_cinematics.md](06_ui_cinematics.md) | UI — DataTable에서 아이템명/텍스트 데이터 읽어 표시 |
+| [22_plugins.md](22_plugins.md) | 플러그인으로 제공되는 DataAsset 확장 시스템 |

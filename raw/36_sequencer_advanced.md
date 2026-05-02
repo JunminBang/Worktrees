@@ -232,3 +232,16 @@ Movie Render Queue는 Sequencer의 **고품질 렌더 출력 도구**입니다. 
 - [ ] Anti-Aliasing Spatial Sample Count가 최소 4 이상인가?
 - [ ] EXR 출력 시 컴포지팅 파이프라인과 색공간(ACES)이 일치하는가?
 - [ ] Path Tracing 사용 시 Samples Per Pixel이 충분한가? (노이즈 확인)
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [17_camera_system.md](17_camera_system.md) | CineCameraActor — FOV·DOF·셰이크 Sequencer 키프레임 |
+| [20_ray_tracing.md](20_ray_tracing.md) | Movie Render Queue — Path Tracing 고품질 시네마틱 출력 |
+| [15_control_rig.md](15_control_rig.md) | Control Rig Track — Sequencer에서 컨트롤 직접 키프레임 |
+| [04_audio_effects.md](04_audio_effects.md) | Audio Track — Sequencer 내 사운드 재생 및 타이밍 제어 |
+| [06_ui_cinematics.md](06_ui_cinematics.md) | 컷씬 재생 — Blueprint에서 Level Sequence Player 제어 |
+| [29_metasounds.md](29_metasounds.md) | MetaSound — Sequencer 구간별 파라미터 키프레임 연동 |

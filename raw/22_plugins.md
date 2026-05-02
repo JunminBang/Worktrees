@@ -199,3 +199,16 @@
 - [ ] 패키징 전에 불필요한 `Editor` 전용 플러그인은 런타임에 포함되지 않는지 확인했는가?
 - [ ] 타겟 플랫폼(콘솔, 모바일)에서 지원되지 않는 플러그인을 활성화하지 않았는가?
 - [ ] 외부 마켓플레이스 플러그인의 UE5.7 호환성을 확인했는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [08_editor_systems.md](08_editor_systems.md) | 에디터 모듈 — Editor 타입 플러그인과 에디터 확장 구조 |
+| [21_blueprint_advanced.md](21_blueprint_advanced.md) | Blueprint Function Library — 플러그인으로 배포하는 패턴 |
+| [11_pcg_procedural.md](11_pcg_procedural.md) | PCG 플러그인 — 활성화 및 의존 플러그인 설정 |
+| [12_groom_hair.md](12_groom_hair.md) | HairStrands / Alembic Importer 플러그인 활성화 |
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | GameplayAbilities 플러그인 — GAS 활성화 및 런타임 모듈 |
+| [32_niagara_advanced.md](32_niagara_advanced.md) | Niagara / NiagaraFluids 플러그인 — VFX 시스템 확장 |

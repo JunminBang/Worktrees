@@ -214,3 +214,16 @@ Groom 하나는 여러 **Hair Group**으로 구성됩니다.
 - [ ] 원거리 LOD에서 Simulation이 꺼져 있는가?
 - [ ] LocalBone이 올바른 본 이름으로 설정되어 있는가?
 - [ ] PhysicsAsset이 컴포넌트에 연결되어 있는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [26_skeletal_mesh_lod.md](26_skeletal_mesh_lod.md) | 스켈레탈 메시 LOD — Groom 바인딩 대상 메시의 LOD 설정 |
+| [03_animation_physics.md](03_animation_physics.md) | 클로스 시뮬레이션 — 헤어와 의상 물리 시뮬레이션 비교 |
+| [45_physics_ragdoll.md](45_physics_ragdoll.md) | Physics Asset — 래그돌 충돌 바디와 Groom PhysicsAsset 연동 |
+| [24_material_advanced.md](24_material_advanced.md) | 머티리얼 — Hair 도메인 머티리얼 설정 및 파라미터 |
+| [22_plugins.md](22_plugins.md) | 플러그인 — HairStrands, Alembic Importer 플러그인 활성화 |
+| [53_profiling_optimization.md](53_profiling_optimization.md) | GPU 프로파일링 — Strand 렌더링 비용 및 LOD 최적화 |

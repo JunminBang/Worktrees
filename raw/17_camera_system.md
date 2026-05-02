@@ -150,3 +150,16 @@ Blueprint에서 `StartCameraFade` 노드 사용:
 - [ ] 기본 플레이 FOV는 90도, 경쟁 FPS는 100~110도
 - [ ] 시네마틱에서 영화 느낌은 FOV 40~60도로 설정
 - [ ] Near Clip 수정 시 캐릭터 메시가 잘리지 않는지 PIE에서 확인
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [36_sequencer_advanced.md](36_sequencer_advanced.md) | CineCameraActor — Sequencer와 연동한 시네마틱 카메라 제작 |
+| [06_ui_cinematics.md](06_ui_cinematics.md) | LevelSequence + Camera Cut Track — 카메라 전환 시퀀서 기초 |
+| [01_gameplay_framework.md](01_gameplay_framework.md) | PlayerController → PlayerCameraManager — 카메라 관리 계층 |
+| [04_audio_effects.md](04_audio_effects.md) | CameraShake와 폭발 SFX 동기화 패턴 |
+| [14_textures_advanced.md](14_textures_advanced.md) | Render Target — 백미러/보안카메라 씬 캡처 활용 |
+| [23_water_volumes.md](23_water_volumes.md) | PostProcessVolume — 수중 카메라 포스트 이펙트 설정 |

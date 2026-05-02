@@ -171,3 +171,16 @@ Lightmap UV는 **라이트맵(베이크드 조명)을 저장하기 위한 전용
 ### Lightmap
 - [ ] Lightmap UV에 겹침이 없는가? (Lightmap Density 뷰로 확인)
 - [ ] Light Map Resolution이 오브젝트 크기에 비례하는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [24_material_advanced.md](24_material_advanced.md) | 머티리얼 슬롯 — LOD별 단순화 머티리얼 할당 |
+| [47_socket_system.md](47_socket_system.md) | 소켓 — 스태틱 메시 소켓 생성 및 Blueprint 활용 |
+| [02_rendering.md](02_rendering.md) | 렌더링 파이프라인 — Nanite/라이트맵 베이크 맥락 |
+| [19_decals.md](19_decals.md) | 데칼 투영 — 스태틱 메시 표면에 데칼 적용 시 UV 주의사항 |
+| [11_pcg_procedural.md](11_pcg_procedural.md) | PCG — 스태틱 메시 에셋을 PCG 그래프에서 인스턴스로 배치 |
+| [53_profiling_optimization.md](53_profiling_optimization.md) | 드로우콜·메모리 — LOD/Nanite 최적화 효과 측정 |

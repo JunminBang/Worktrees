@@ -166,3 +166,16 @@ Control Rig을 **모듈 단위로 조립**하는 시스템:
 - [ ] Control Rig은 매 프레임 CPU에서 실행됨 → 불필요한 노드 제거
 - [ ] 원거리 LOD에서 Control Rig 솔버가 비활성화되는가?
 - [ ] Full Body IK는 이펙터 수를 최소화했는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [03_animation_physics.md](03_animation_physics.md) | AnimBlueprint — Control Rig 노드를 AnimGraph에 연결 |
+| [26_skeletal_mesh_lod.md](26_skeletal_mesh_lod.md) | Skeleton 계층 구조 — Control Rig의 Bone 요소 기반 |
+| [47_socket_system.md](47_socket_system.md) | 소켓 — Control Rig과 함께 사용하는 뼈대 연결 지점 |
+| [28_motion_warping.md](28_motion_warping.md) | Motion Warping — Control Rig IK와 결합한 위치 보정 |
+| [36_sequencer_advanced.md](36_sequencer_advanced.md) | Sequencer에서 Control Rig 컨트롤로 키프레임 애니메이션 제작 |
+| [48_collision_trace.md](48_collision_trace.md) | Line Trace — 발 IK 배치에서 지형 높이 감지에 활용 |

@@ -265,3 +265,18 @@ Runtime/ClothingSystemRuntimeNv/      ← NVIDIA Cloth 구현
 | 블렌드가 뚝뚝함 | 전환 시간 너무 짧음 | Transition 0.2~0.3초로 늘림 |
 | 래그돌이 튕겨나감 | 관절 제약 너무 강함 | Damping 증가, 제약 범위 완화 |
 | 애니메이션 발자국 소리 없음 | Notify 미설정 | AnimNotify 프레임 추가 |
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [15_control_rig.md](15_control_rig.md) | 절차적 리깅, Full Body IK — 애님 BP와 연동 |
+| [26_skeletal_mesh_lod.md](26_skeletal_mesh_lod.md) | 스켈레탈 메시 LOD, Morph Target, ChaosCloth |
+| [28_motion_warping.md](28_motion_warping.md) | 애니메이션 위치 자동 보정 (오르기, 처형 모션) |
+| [47_socket_system.md](47_socket_system.md) | 소켓 — AnimNotify와 연동한 발소리/이펙트 타이밍 |
+| [50_physical_material.md](50_physical_material.md) | Physical Material — AnimNotify에서 발소리 표면 분기 |
+| [44_character_movement.md](44_character_movement.md) | CharacterMovementComponent — 이동 모드와 애님 State Machine 연결 |
+| [45_physics_ragdoll.md](45_physics_ragdoll.md) | Physics Asset, 래그돌 전환, 부분 물리 애니메이션 |
+| [04_audio_effects.md](04_audio_effects.md) | AnimNotify에서 발사·발소리 SoundWave 재생 |

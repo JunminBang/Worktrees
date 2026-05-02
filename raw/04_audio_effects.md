@@ -287,3 +287,16 @@ Collision/, Event/, Beam/, Trail/, VectorField/
 | 파티클 성능 저하 | 파티클 수 과다 | LOD + Fixed Budget 설정 |
 | 이펙트 남아있음 | Lifetime 미설정 | Particle Lifetime 모듈 추가 |
 | 나이아가라 메모리 누수 | 컴포넌트 미제거 | Component Pool 사용 |
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [29_metasounds.md](29_metasounds.md) | MetaSound 노드 그래프 — 절차적 오디오 심화 |
+| [32_niagara_advanced.md](32_niagara_advanced.md) | Niagara GPU Sim, Ribbon/Beam/Mesh 파티클 심화 |
+| [50_physical_material.md](50_physical_material.md) | Physical Material — 표면 타입별 발소리/충격음 분기 |
+| [36_sequencer_advanced.md](36_sequencer_advanced.md) | Sequencer 오디오 트랙 — 시네마틱 사운드 동기화 |
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | GameplayCue — GAS 이벤트에서 VFX/SFX 연결 |
+| [17_camera_system.md](17_camera_system.md) | CameraShake — 폭발/임팩트 시 카메라 진동과 동기화 |

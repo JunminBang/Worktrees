@@ -197,3 +197,16 @@ Static Mesh를 파티클로 사용해 오브젝트 파편, 잎사귀, 잔해 등
 - [ ] Cull Distance가 씬 규모에 맞게 설정되어 있는가?
 - [ ] 화면에 동시 재생되는 Niagara System 수가 예산 안에 있는가?
 - [ ] Ribbon/Beam에 Tessellation이 불필요하게 높지 않은가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [04_audio_effects.md](04_audio_effects.md) | 파티클 + 사운드 조합 — 충격 이펙트 세트 구성 |
+| [47_socket_system.md](47_socket_system.md) | 소켓 — 무기/캐릭터 소켓에서 Niagara 시스템 스폰 |
+| [19_decals.md](19_decals.md) | 파티클 + 데칼 조합 — 총탄 충격 이펙트 세트 구성 |
+| [50_physical_material.md](50_physical_material.md) | Surface Type — 표면별 파티클 이펙트 분기 (콘크리트/금속/나무) |
+| [10_chaos_destruction.md](10_chaos_destruction.md) | 파괴 이벤트 — 파편 발생 시 Niagara 먼지/불꽃 이펙트 연동 |
+| [53_profiling_optimization.md](53_profiling_optimization.md) | GPU 파티클 비용 측정 — Niagara Debugger & GPU 프로파일링 |

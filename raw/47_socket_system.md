@@ -167,3 +167,16 @@
 ### Anim Notify 연동
 - [ ] 발 착지 프레임에 소켓 이펙트 Notify가 배치되어 있는가?
 - [ ] 총 발사 애니메이션의 발사 프레임에 이펙트 Notify가 있는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [03_animation_physics.md](03_animation_physics.md) | AnimNotify — 발/총구 소켓 이펙트 발동 타이밍 설정 |
+| [15_control_rig.md](15_control_rig.md) | Control Rig — 소켓이 부착되는 뼈대(Bone) 구조 |
+| [48_collision_trace.md](48_collision_trace.md) | Line Trace 시작점으로 Socket_Muzzle 위치 사용 |
+| [42_staticmesh_advanced.md](42_staticmesh_advanced.md) | 스태틱 메시 소켓 생성 방법 |
+| [32_niagara_advanced.md](32_niagara_advanced.md) | 소켓 위치에 Niagara 이펙트 Spawn Attached |
+| [04_audio_effects.md](04_audio_effects.md) | 소켓 위치에서 3D 사운드 재생 (발소리, 총구음) |

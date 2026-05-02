@@ -181,3 +181,17 @@ Event On Component Begin Overlap (CollisionBox)
 ### 근접 공격 판정
 - [ ] 단순 Line Trace가 아닌 Sphere/Box Trace로 범위를 표현했는가?
 - [ ] 판정 타이밍이 애니메이션의 실제 타격 프레임과 일치하는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [50_physical_material.md](50_physical_material.md) | Hit Result → Physical Material → Surface Type — 표면별 반응 분기 |
+| [47_socket_system.md](47_socket_system.md) | 소켓 위치를 Trace 시작점으로 사용 (총구, 손목) |
+| [19_decals.md](19_decals.md) | Impact Point에 데칼 스폰 — 탄흔/자국 표현 |
+| [45_physics_ragdoll.md](45_physics_ragdoll.md) | Hit Bone Name — 피격 부위별 Hit Reaction / 래그돌 전환 |
+| [09_gameplay_ability_system.md](09_gameplay_ability_system.md) | Hit Actor에 GameplayEffect 적용 — 피해/상태이상 처리 |
+| [03_animation_physics.md](03_animation_physics.md) | AnimNotify — 근접 공격 판정 활성화 타이밍 |
+| [32_niagara_advanced.md](32_niagara_advanced.md) | Impact Point에 파티클 이펙트 스폰 |

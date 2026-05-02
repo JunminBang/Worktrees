@@ -158,3 +158,16 @@ LocationType: KeepWorldPosition
 ### 성능
 - [ ] 화면에 동시에 보이는 데칼이 50개를 넘지 않는가?
 - [ ] 총탄/파티클 연동 데칼에 최대 개수 제한 로직이 있는가?
+
+---
+
+## 관련 문서
+
+| 문서 | 연관 이유 |
+|------|---------|
+| [48_collision_trace.md](48_collision_trace.md) | Line Trace Hit Result → ImpactPoint/Normal에서 데칼 스폰 |
+| [50_physical_material.md](50_physical_material.md) | Surface Type — 표면별 데칼 머티리얼 분기 (콘크리트/금속/나무) |
+| [32_niagara_advanced.md](32_niagara_advanced.md) | 파티클 + 데칼 조합 — 총탄 충격 이펙트 세트 구성 |
+| [24_material_advanced.md](24_material_advanced.md) | Deferred Decal 머티리얼 도메인 설정, DBuffer 모드 이해 |
+| [02_rendering.md](02_rendering.md) | GBuffer — Deferred Decal이 GBuffer에 쓰이는 렌더링 패스 |
+| [10_chaos_destruction.md](10_chaos_destruction.md) | 파괴 이벤트에 탄흔/스크래치 데칼 스폰 연동 |
