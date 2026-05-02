@@ -25,49 +25,25 @@ workspace/
 ├── CLAUDE.md                  # AI 협업 운영 지침 (Harness 핵심 문서)
 ├── plans/                     # TA 도구 기획서
 │   ├── ta-tools-plan.md       # 전체 도구 목록 (41개)
-│   └── specs/                 # 도구별 상세 기획서 (15개)
-│       ├── asset-naming-validator.md
-│       ├── actor-tag-auditor.md
-│       ├── blueprint-compile-watchdog.md
-│       ├── collision-complexity-auditor.md
-│       ├── draw-call-budget-tracker.md
-│       ├── editor-startup-profiler.md
-│       ├── foliage-density-normalizer.md
-│       ├── level-health-checker.md
-│       ├── light-complexity-reporter.md
-│       ├── lod-auto-generator.md
-│       ├── material-instance-batcher.md
-│       ├── material-param-propagator.md
-│       ├── orphan-asset-finder.md
-│       ├── shader-complexity-visualizer.md
-│       ├── streaming-level-validator.md
-│       ├── texture-audit-tool.md
-│       ├── uv-density-checker.md
-│       └── vertex-color-painter-batch.md
+│   └── specs/                 # 도구별 상세 기획서 (19개)
 ├── tools/
 │   └── auto-ingest/           # Wiki Auto-Ingest Hook [완료]
-│       ├── config.json        # 감시 대상 설정 (UE 프로젝트 경로 포함)
-│       ├── scan.ps1           # 원샷 스캔 (session-start에서 호출)
-│       ├── watcher.ps1        # 실시간 FileSystemWatcher
+│       ├── config.json
+│       ├── scan.ps1
+│       ├── watcher.ps1
 │       └── parsers/
-│           ├── build-log.ps1
-│           ├── profiling-json.ps1
-│           └── profiling-csv.ps1
 ├── wiki/                      # AI가 유지하는 지식 베이스
-│   ├── index.md               # 위키 인덱스
-│   ├── systems/               # UE5 시스템별 요약
-│   ├── shaders/               # 셰이더 관련 지식
-│   └── papers/                # 그래픽스 논문 요약
-├── raw/                       # 원본 소스 자료 (읽기 전용)
+│   ├── index.md
+│   ├── systems/
+│   ├── shaders/
+│   └── papers/
+├── raw/                       # UE5.7 엔진 레퍼런스 문서 (45개, 크로스링크 완료)
 │   ├── INDEX.md
-│   ├── auto/                  # Auto-Ingest 자동 생성 Markdown (git 제외)
+│   ├── 00_overview.md ~ 53_profiling_optimization.md
+│   ├── auto/                  # Auto-Ingest 자동 생성 (git 제외)
 │   └── graphics/              # 그래픽스 연구 논문
 └── docs/
     └── engine-reference/      # UE5.7 버전 고정 API 레퍼런스
-        └── unreal/
-            ├── VERSION.md
-            ├── breaking-changes.md
-            └── modules/
 ```
 
 ---
@@ -76,39 +52,84 @@ workspace/
 
 | 항목 | 내용 |
 |---|---|
-| **Engine** | Unreal Engine 5.7 |
+| **Engine** | Unreal Engine 5.7 (5.5 호환) |
 | **Language** | C++ / Blueprint |
-| **Rendering** | CSM / Legacy Material / Lumen (옵션) |
+| **Rendering** | Lumen / Nanite / TSR |
 | **Version Control** | Git (trunk-based) |
 
 ---
 
-## TA 도구 기획 목록
+## UE5 엔진 레퍼런스 문서 (`raw/`)
 
-총 **13개 카테고리 / 41개 도구** 기획 중. 상세 목록은 [plans/ta-tools-plan.md](plans/ta-tools-plan.md) 참조.
+총 **45개** UE5.7 시스템별 레퍼런스 문서. 모든 문서에 `## 관련 문서` 양방향 크로스링크 완료.
 
-| 카테고리 | 대표 도구 | 기획서 |
+| 카테고리 | 문서 |
+|---|---|
+| **게임플레이** | `00_overview` `01_gameplay_framework` `09_gameplay_ability_system` `16_data_management` `18_save_load` |
+| **렌더링 & 라이팅** | `02_rendering` `20_ray_tracing` `25_lighting_system` `39_volumetric_clouds` |
+| **머티리얼 & 텍스처** | `14_textures_advanced` `24_material_advanced` `19_decals` |
+| **애니메이션 & 캐릭터** | `03_animation_physics` `15_control_rig` `26_skeletal_mesh_lod` `28_motion_warping` `44_character_movement` `45_physics_ragdoll` |
+| **월드 빌딩** | `07_world_network_assets` `11_pcg_procedural` `31_level_instance` `35_landscape_advanced` `40_world_partition` `43_foliage_system` |
+| **메시 & 소켓** | `42_staticmesh_advanced` `47_socket_system` `48_collision_trace` `50_physical_material` |
+| **VFX & 오디오** | `04_audio_effects` `29_metasounds` `32_niagara_advanced` `12_groom_hair` |
+| **UI & 카메라** | `06_ui_cinematics` `17_camera_system` `36_sequencer_advanced` |
+| **AI & 시스템** | `05_ai_navigation` `27_mass_entity` `10_chaos_destruction` `13_online_multiplayer` |
+| **엔진 & 에디터** | `08_editor_systems` `21_blueprint_advanced` `22_plugins` `30_geometry_script` |
+| **환경** | `23_water_volumes` `39_volumetric_clouds` |
+| **최적화** | `53_profiling_optimization` |
+
+> 모든 문서는 UE5.5 이상과 호환됩니다.
+
+---
+
+## TA 도구 기획
+
+### 기획 완료 도구 (19개 기획서)
+
+| 카테고리 | 도구 | 상태 |
 |---|---|---|
-| 에셋 파이프라인 | Asset Naming Validator, LOD Auto Generator, Texture Audit Tool | `[검]` |
-| 씬 / 레벨 관리 | Level Health Checker, Light Complexity Reporter | `[검]` |
-| 렌더링 / 머티리얼 | Shader Complexity Visualizer, UV Density Checker, Vertex Color Painter Batch | `[검]` |
-| 애니메이션 / 리깅 | Anim Notify Auditor, Root Motion Validator | `[ ]` |
-| VFX / Niagara | Niagara Budget Monitor, VFX Culling Validator | `[ ]` |
-| 퍼포먼스 프로파일링 | Draw Call Budget Tracker, Collision Complexity Auditor | `[검]` |
-| 월드 빌딩 | Foliage Density Normalizer, PCG Graph Validator | `[검]` / `[ ]` |
-| 오디오 | Sound Asset Auditor | `[ ]` |
-| 에디터 UX | Editor Startup Profiler, Hotkey Conflict Detector | `[검]` / `[ ]` |
-| 버전 관리 | Large Binary Watcher, Changenote Auto-Generator | `[ ]` |
-| 플랫폼 / 인증 | Icon & Splash Spec Validator, Localization String Auditor | `[ ]` |
-| 빌드 / QA | Blueprint Compile Watchdog, Cook Report Diff | `[검]` / `[ ]` |
-| Wiki 연동 | **Wiki Auto-Ingest Hook** ✅ | `[x]` |
+| 에셋 파이프라인 | Asset Naming Validator | `[검]` |
+| 에셋 파이프라인 | LOD Auto Generator | `[검]` |
+| 에셋 파이프라인 | Texture Audit Tool | `[검]` |
+| 에셋 파이프라인 | Orphan Asset Finder | `[검]` |
+| 에셋 파이프라인 | Material Instance Batcher | `[검]` |
+| 에셋 파이프라인 | Material Param Propagator | `[검]` |
+| 씬 / 레벨 | Level Health Checker | `[검]` |
+| 씬 / 레벨 | Light Complexity Reporter | `[검]` |
+| 씬 / 레벨 | Streaming Level Validator | `[검]` |
+| 씬 / 레벨 | Actor Tag Auditor | `[검]` |
+| 렌더링 | Shader Complexity Visualizer | `[검]` |
+| 렌더링 | UV Density Checker | `[검]` |
+| 렌더링 | Vertex Color Painter Batch | `[검]` |
+| 퍼포먼스 | Draw Call Budget Tracker | `[검]` |
+| 퍼포먼스 | Collision Complexity Auditor | `[검]` |
+| 월드 빌딩 | Foliage Density Normalizer | `[검]` |
+| 에디터 UX | Editor Startup Profiler | `[검]` |
+| 빌드 / QA | Blueprint Compile Watchdog | `[검]` |
+| Wiki 연동 | **Wiki Auto-Ingest Hook** | `[x]` ✅ |
+
+### 레퍼런스 기반 추가 후보 도구 (구현 대기)
+
+`raw/` 문서 분석을 통해 도출한 추가 도구 아이디어:
+
+| 도구 | 기반 문서 |
+|---|---|
+| 머티리얼 컨벤션 체커 (Instruction Count, 네이밍) | `24_material_advanced` |
+| 라이팅 씬 오디터 (Movable 광원 수, Cast Shadows) | `25_lighting_system` |
+| 데칼 헬스 모니터 (DBuffer/Deferred 혼용, LifeSpan) | `19_decals` |
+| Niagara 예산 트래커 | `32_niagara_advanced` |
+| Physics Asset 자동 생성 보조 | `45_physics_ragdoll` |
+| Physical Material 자동 할당기 | `50_physical_material` |
+| World Partition 설정 체커 | `40_world_partition` |
+| Socket 네이밍 컨벤션 체커 | `47_socket_system` |
+| 씬 복잡도 대시보드 | `53_profiling_optimization` |
 
 ### 진행 상태 기준
 
 | 상태 | 의미 |
 |---|---|
 | `[ ]` | 미착수 |
-| `[기]` | 기획서 작성 완료 (어드바이저 검수 전) |
+| `[기]` | 기획서 작성 완료 (검수 전) |
 | `[검]` | 기획서 검수 완료 (구현 대기) |
 | `[~]` | 구현 중 |
 | `[x]` | 완료 |
@@ -124,7 +145,7 @@ UE 프로젝트 파일 변경
         ↓
 tools/auto-ingest/scan.ps1   ← session-start 훅에서 자동 호출
         ↓
-raw/auto/queue/pending/      ← 처리 대기 큐 (디렉토리 큐, 원자적)
+raw/auto/queue/pending/      ← 처리 대기 큐
         ↓
 Claude 세션 시작 시 알림 → wiki_ingest 호출
         ↓
@@ -133,7 +154,7 @@ raw/auto/queue/done/         ← 완료 항목
 
 **사용 방법**:
 1. `tools/auto-ingest/config.json`에서 `ueProjectPath` 설정
-2. 세션 시작 시 자동으로 scan.ps1 실행 (pending 항목 알림)
+2. 세션 시작 시 자동으로 scan.ps1 실행
 3. 실시간 감시가 필요하면 별도 터미널에서 `watcher.ps1` 실행
 
 ---
@@ -152,13 +173,6 @@ LLM Wiki:  자료 추가 → AI가 즉시 위키에 통합  → 지식이 누적
 | 1층 — 원본 자료 | 기사, 레퍼런스, 회의록 (`raw/`) | 사람 (읽기 전용) |
 | 2층 — 위키 | 주제별 요약·개념 정리 (`wiki/`) | AI가 쓴다 |
 | 3층 — 스키마 | 위키 구성 규칙, 처리 순서 | CLAUDE.md |
-
----
-
-## Engine Reference
-
-`docs/engine-reference/unreal/`은 **UE 5.7 버전 고정** API 레퍼런스입니다.  
-LLM의 학습 데이터는 UE 5.3까지만 커버하므로, 엔진 API 사용 전 반드시 여기를 먼저 확인합니다.
 
 ---
 
